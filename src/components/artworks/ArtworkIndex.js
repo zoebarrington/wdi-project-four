@@ -1,6 +1,6 @@
 import React from 'react';
 import axios from 'axios';
-// import ArtworkBox from './ArtworkBox';
+import ArtworkBox from './ArtworkBox';
 
 class ArtworkIndex extends React.Component {
   constructor(props) {
@@ -14,7 +14,16 @@ class ArtworkIndex extends React.Component {
   render() {
     return (
       <main>
-        <h1>Hello World</h1>
+        <h1 className="title">All the artworks</h1>
+
+        <div className="index-container">
+          {this.state.artworks
+            ?
+            this.state.artworks.map(artwork => <ArtworkBox key={artwork._id} artwork={artwork}/>)
+            :
+            <p>Loading...</p>
+          }
+        </div>
       </main>
     );
   }
