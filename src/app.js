@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 
 import ArtworkIndex from './components/artworks/ArtworkIndex';
+import ArtworkShow from './components/artworks/ArtworkShow';
 import Header from './components/Header';
 import Home from './components/Home';
 
@@ -21,6 +22,7 @@ class App extends React.Component {
             <Switch>
               <Route exact path="/artwork" component={ArtworkIndex} />
               <Route exact path="/" component={Home} />
+              <Route path="/artwork/:id" component={ArtworkShow} />
             </Switch>
           </main>
         </div>

@@ -2,6 +2,14 @@ const mongoose = require('mongoose');
 const { dbURI } = require('../config/environment');
 mongoose.connect(dbURI);
 const Artwork = require('../models/artwork');
+const User = require('../models/user');
+
+const userData = [{
+  username: 'Dave',
+  email: 'dave@dave.com',
+  password: 'pass',
+  passwordConfirmation: 'pass'
+}];
 
 const artworkData = [
   {
@@ -64,9 +72,15 @@ const artworkData = [
 ];
 
 Artwork.collection.drop();
+User.collection.drop();
 
 Artwork.create(artworkData)
   .then(artwork => {
     console.log(`Created ${artwork.length} artworks!`);
+    mongoose.connection.close();
+  });
+User.create(userData)
+  .then(user => {
+    console.log(`Created ${user.length} users!`);
     mongoose.connection.close();
   });

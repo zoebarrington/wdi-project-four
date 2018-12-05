@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 function ArtworkBox({ artwork }) {
   return (
-    <Link to={`/artworks/${artwork._id}`}>
+    <Link to={`/artwork/${artwork._id}`}>
       <article className="artwork-box">
         <img src={artwork.image} />
         <hr />
