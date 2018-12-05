@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
-const env = require('../config/environemnt');
-mongoose.connect(env.dbUri);
+const { dbURI } = require('../config/environment');
+mongoose.connect(dbURI);
 const Artwork = require('../models/artwork');
 
 const artworkData = [
@@ -68,5 +68,5 @@ Artwork.collection.drop();
 Artwork.create(artworkData)
   .then(artwork => {
     console.log(`Created ${artwork.length} artworks!`);
-    mongoose.collection.close();
+    mongoose.connection.close();
   });
