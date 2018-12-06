@@ -1,34 +1,45 @@
 import React from 'react';
 import axios from 'axios';
 
-class ArtworksShow extends React.Component {
+import ImageColumn from './ImageColumn';
+import TextColumn from './TextColumn';
+
+export default class ArtworkShow extends React.Component {
   constructor(props) {
     super(props);
     this.state = {};
+    this.handleChange = this.handleChange.bind(this);
   }
 
   componentDidMount() {
     axios.get(`/api/artwork/${this.props.match.params.id}`)
-      .then(result => this.setState({ artwork: result.data }));
+      .then(res => {
+        this.setState({ artwork: res.data });
+        console.log('We have', this.state.artwork);
+      });
   }
+  handleChange(e) {
+    const { target: {name, value} } = e;
+    this.setState({ [name]: value });
+  }
+
 
   render() {
     const artwork = this.state.artwork;
     return (
-      <main>
+      <section>
         {artwork
           ?
-          <section>
-            <h1>{artwork.name}</h1>
-            <img src={artwork.image} />
-
-          </section>
+          <div>
+            <div className="columns">
+              <ImageColumn artwork={artwork} />
+              <TextColumn artwork={artwork}/>
+            </div>
+            <hr />
+          </div>
           :
-          <p>Loading...</p>
-        }
-      </main>
+          <p>Please wait...</p>}
+      </section>
     );
   }
 }
-
-export default ArtworksShow;
