@@ -22,7 +22,12 @@ export default class ArtworkShow extends React.Component {
     const { target: {name, value} } = e;
     this.setState({ [name]: value });
   }
-
+  handleDelete() {
+    axios
+      .delete(`/api/artwork/${this.props.match.params.id}`)
+      .then(res => console.log('res', res))
+      .then(() => this.props.history.push('/artwork'));
+  }
 
   render() {
     const artwork = this.state.artwork;

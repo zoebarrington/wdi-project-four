@@ -1,4 +1,5 @@
 import React from 'react';
+import { handleDelete } from './ArtworkShow';
 
 function TextColumn({ artwork }) {
   return (
@@ -7,6 +8,8 @@ function TextColumn({ artwork }) {
 
       <p>£{artwork.price}</p>
       <p>£{artwork.description}</p>
+      <button onClick={ handleDelete }>Delete</button>
+      <button>Edit</button>
 
     </div>
   );

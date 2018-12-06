@@ -1,5 +1,6 @@
 import React from 'react';
 import axios from 'axios';
+import ArtworkForm from './ArtworkForm';
 
 class ArtworkNew extends React.Component {
   constructor(props) {
@@ -8,6 +9,7 @@ class ArtworkNew extends React.Component {
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
+
   handleSubmit(e) {
     e.preventDefault();
     console.log('Submit handled', this.state);
@@ -19,27 +21,15 @@ class ArtworkNew extends React.Component {
     this.setState({ [name]: value });
   }
 
+
   render() {
-    return (
+    return(
       <section>
-        <form onSubmit={this.handleSubmit}>
-          <label>Name</label>
-          <input onChange={this.handleChange}
-            value={this.state.name || ''}
-            name="name"
-          />
-          <label>Price</label>
-          <input onChange={this.handleChange}
-            value={this.state.price || ''}
-            name="price"
-          />
-          <label>Artist</label>
-          <input onChange={this.handleChange}
-            value={this.state.artist || ''}
-            name="artist"
-          />
-          <button>Add a work of art</button>
-        </form>
+        <h2 className="title is-2">Add a Artwork</h2>
+        <ArtworkForm
+          handleChange = {this.handleChange}
+          handleSubmit = {this.handleSubmit}
+        />
       </section>
     );
   }

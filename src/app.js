@@ -25,8 +25,8 @@ class App extends React.Component {
             <Switch>
               <Route exact path="/artwork" component={ArtworkIndex} />
               <Route exact path="/" component={Home} />
+              <Route exact path="/artwork/new" component={ArtworkNew} />
               <Route path="/artwork/:id" component={ArtworkShow} />
-              <Route path="/artwork/new" component={ArtworkNew} />
               <Route path="/login" component={AuthLogin} />
               <Route path="/register" component={AuthRegister} />
             </Switch>
