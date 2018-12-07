@@ -1,6 +1,10 @@
 const mongoose = require('mongoose');
 
 const artworkSchema = mongoose.Schema({
+  createdBy: {
+    type: mongoose.Schema.ObjectId,
+    ref: 'User'
+  },
   name: String,
   price: Number,
   artist: String,

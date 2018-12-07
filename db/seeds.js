@@ -21,22 +21,29 @@ const userIds = [
 
 const userData = [{
   _id: userIds [0],
-  username: 'zoebarrington',
-  email: 'zoe@zoee',
+  username: 'camilladown',
+  email: 'camilla@down',
   password: 'pass',
   bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
   profilePicture: 'image'
 }, {
   _id: userIds [1],
-  username: 'jellybean',
-  email: 'jelly@bean',
+  username: 'freyahollingberry',
+  email: 'freya@hollingberry',
+  password: 'pass',
+  bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+  profilePicture: 'https://images.ecosia.org/ZvXLRNB1Xk5bWn95V8y1ZnZ6ZY4=/0x390/smart/http%3A%2F%2Fcontent.mycutegraphics.com%2Fgraphics%2Fjellybean%2Fsmiling-pink-jelly-bean.png'
+}, {
+  _id: userIds [2],
+  username: 'claypeterson',
+  email: 'clay@peterson',
   password: 'pass',
   bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
   profilePicture: 'image'
 }, {
-  _id: userIds [2],
-  username: 'pinacolada',
-  email: 'pina@colada',
+  _id: userIds [3],
+  username: 'pollybaker',
+  email: 'polly@baker',
   password: 'pass',
   bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
   profilePicture: 'image'
@@ -44,6 +51,7 @@ const userData = [{
 
 const artworkData = [
   {
+    createdBy: userIds[0],
     name: 'Ladies in Blue',
     price: 300,
     artist: 'Camilla Down',
@@ -58,6 +66,7 @@ const artworkData = [
       content: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
     }]
   }, {
+    createdBy: userIds[3],
     name: 'Cruella at Christmas',
     price: 15,
     artist: 'Polly Baker',
@@ -72,6 +81,7 @@ const artworkData = [
       content: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
     }]
   }, {
+    createdBy: userIds[2],
     name: 'No Boys Allowed',
     price: 200,
     artist: 'Clay Peterson',
@@ -86,6 +96,7 @@ const artworkData = [
       content: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
     }]
   }, {
+    createdBy: userIds[1],
     name: 'Era',
     price: 600,
     artist: 'Freya Hollingberry',
@@ -100,6 +111,7 @@ const artworkData = [
       content: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
     }]
   }, {
+    createdBy: userIds[1],
     name: 'Cherubs',
     price: 700,
     artist: 'Freya Hollingberry',
@@ -114,6 +126,7 @@ const artworkData = [
       content: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
     }]
   }, {
+    createdBy: userIds[0],
     name: 'Prancing',
     price: 500,
     artist: 'Camilla Down',

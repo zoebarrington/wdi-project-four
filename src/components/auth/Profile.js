@@ -10,25 +10,32 @@ class Profile extends React.Component {
   }
   componentDidMount() {
     axios.get(`/api/profile/${decodeToken().sub}`)
-      .then(result => {
+    .then(result => {
 
-        this.setState({ user: result.data });
-        console.log('we have profile', this.state.user);
-      });
+      this.setState({ user: result.data });
+      console.log('we have profile', this.state.user);
+    });
   }
   render() {
     return (
-      <div>
-        <h1>Profile Page</h1>
-        <div className="profile-page">
+      <div className="profile-page columns">
+        <div className="column is-3">
           {this.state.user
             ?
-            <p>{this.state.user.bio}</p>
+            <div className="user">
+              <div id="card is-shady user-info">
+                <p>{this.state.user.username}</p>
+                <img id="profile-pic" src={this.state.user.profilePicture}/>
+                <p>{this.state.user.bio}</p>
+              </div>
+            </div>
             :
             <p>Loading...</p>
           }
         </div>
       </div>
+
+
     );
   }
 }
