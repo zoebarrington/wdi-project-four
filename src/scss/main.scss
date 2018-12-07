@@ -1,3 +1,17 @@
 .navbar {
-  color: red;
+background-color: black;
+display: flex;
+  .navbar-item.has-dropdown.is-hoverable {
+    background-color: pink;
+  }
+}
+
+.index-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+#image-name {
+  text-decoration: none;
+  color: black;
 }

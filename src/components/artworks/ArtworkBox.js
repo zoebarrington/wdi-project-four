@@ -5,9 +5,9 @@ function ArtworkBox({ artwork }) {
   return (
     <Link to={`/artwork/${artwork._id}`}>
       <article className="artwork-box">
-        <img src={artwork.image} />
+        <img src={artwork.image} width="200px;"/>
         <hr />
-        <h3>{artwork.name}</h3>
+        <h3 id="image-name">{artwork.name}</h3>
       </article>
     </Link>
   );

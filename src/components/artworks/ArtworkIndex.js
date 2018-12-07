@@ -14,15 +14,21 @@ class ArtworkIndex extends React.Component {
   render() {
     return (
       <main>
-        <h1 className="title">All the artworks</h1>
+        <h1 className="title">Gallery</h1>
 
-        <div className="index-container">
+        <div className="genres">
+        </div>
+
+        <div className="index-container columns is-4">
           {this.state.artworks
             ?
             this.state.artworks.map(artwork => <ArtworkBox key={artwork._id} artwork={artwork}/>)
             :
             <p>Loading...</p>
           }
+        </div>
+
+        <div className="external-api">
         </div>
       </main>
     );

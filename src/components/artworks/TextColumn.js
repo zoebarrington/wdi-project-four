@@ -10,7 +10,7 @@ function TextColumn({ artwork, handleDelete }) {
       <p>£{artwork.price}</p>
       <p>£{artwork.description}</p>
       <button onClick={ handleDelete }>Delete</button>
-      <Link to={`/artwork/${artwork._id}/edit`}>Edit da art!</Link>
+      <button><Link to={`/artwork/${artwork._id}/edit`}>Edit da art!</Link></button>
 
     </div>
   );

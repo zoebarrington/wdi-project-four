@@ -12,6 +12,7 @@ import ArtworkNew from './components/artworks/ArtworkNew';
 import Home from './components/Home';
 import Basket from './components/Basket';
 import PurchaseHistory from './components/PurchaseHistory';
+import Profile from './components/auth/Profile';
 
 
 import './scss/main.scss';
@@ -34,8 +35,9 @@ class App extends React.Component {
               <Route path='/artwork/:id/edit' component={ArtworkEdit}/>
               <Route exact path="/artwork/new" component={ArtworkNew} />
               <Route path="/artwork/:id" component={ArtworkShow} />
-              <Route path="/login" component={AuthLogin} />
-              <Route path="/register" component={AuthRegister} />
+              <Route exact path="/login" component={AuthLogin} />
+              <Route exact path="/register" component={AuthRegister} />
+              <Route path="/profile/:id" component={Profile} />
             </Switch>
           </main>
         </div>

@@ -4,6 +4,7 @@ const authController = require('../controllers/authController');
 const secureRoute = require('../lib/secureRoute');
 const commentController = require('../controllers/commentController');
 const purchasesController = require('../controllers/purchasesController');
+const userController = require('../controllers/userController');
 
 //index and create route
 router.route('/artwork')
@@ -31,6 +32,11 @@ router.route('/artwork/:id/comments/commentId')
 //basket
 router.post('/checkout', secureRoute, purchasesController.create);
 router.get('/purchases', secureRoute, purchasesController.userIndex);
+
+//Profile
+router.route('/profile/:id')
+  .get(userController.show);
+
 
 
 module.exports = router;
