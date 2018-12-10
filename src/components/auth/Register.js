@@ -25,6 +25,7 @@ class AuthRegister extends React.Component {
   render() {
     return (
       <form onSubmit={this.handleSubmit}>
+
         <div className="field">
           <input
             className="input"
@@ -38,6 +39,22 @@ class AuthRegister extends React.Component {
             className="input"
             name="email"
             placeholder="Email"
+            onChange={this.handleChange}
+          />
+        </div>
+        <div className="field">
+          <input
+            className="input"
+            name="bio"
+            placeholder="Bio"
+            onChange={this.handleChange}
+          />
+        </div>
+        <div className="field">
+          <input
+            className="input"
+            name="profilePicture"
+            placeholder="Profile Picture"
             onChange={this.handleChange}
           />
         </div>

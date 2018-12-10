@@ -9,6 +9,7 @@ function indexRoute(req, res, next) {
 //show route
 function showRoute(req, res, next) {
   Artwork.findById(req.params.id)
+    .populate('createdBy name.createdBy')
     .then(artwork => res.json(artwork))
     .catch(next);
 }
@@ -16,6 +17,7 @@ function showRoute(req, res, next) {
 
 //create route
 function createRoute(req, res, next) {
+  req.body.createdBy = req.currentUser._id;
   Artwork.create(req.body)
     .then(artwork => res.json(artwork))
     .catch(next);
@@ -24,8 +26,13 @@ function createRoute(req, res, next) {
 //update route
 function updateRoute(req, res, next) {
   Artwork.findById(req.params.id)
-    .then(artwork => artwork.set(req.body))
-    .then(artwork => artwork.save())
+    .exec()
+    // .then(artwork => artwork.set(req.body))
+
+    .then(artwork => {
+      Object.assign(artwork, req.body);
+      return artwork.save();
+    })
     .then(artwork => res.json(artwork))
     .catch(next);
 }
@@ -33,6 +40,8 @@ function updateRoute(req, res, next) {
 //delete route
 function deleteRoute(req, res, next) {
   Artwork.findByIdAndDelete(req.params.id)
+    .exec()
+    .then(artwork => artwork.remove())
     .then(() => res.sendStatus(204))
     .catch(next);
 }

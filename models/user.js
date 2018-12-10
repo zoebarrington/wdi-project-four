@@ -18,6 +18,12 @@ const userSchema = new mongoose.Schema({
   profilePicture: String
 });
 
+userSchema.virtual('artworkAdded', {
+  ref: 'Artwork',
+  localField: '_id',
+  foreignField: 'createdBy'
+});
+
 userSchema.plugin(require('mongoose-unique-validator'));
 
 userSchema.set('toJSON', {

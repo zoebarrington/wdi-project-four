@@ -13,6 +13,11 @@ export function decodeToken() {
   return decoded;
 }
 
+export function tokenUsername() {
+  return decodeToken().username;
+}
+
+
 export function currentUserId() {
   return decodeToken().sub;
 }
@@ -23,4 +28,10 @@ export function deleteToken() {
 
 export function isAuthenticated() {
   return !!getToken();
+}
+
+export function authorizationHeader() {
+  return {
+    headers: { Authorization: 'Bearer ' + getToken() }
+  };
 }

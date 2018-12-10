@@ -5,11 +5,12 @@ const secureRoute = require('../lib/secureRoute');
 const commentController = require('../controllers/commentController');
 const purchasesController = require('../controllers/purchasesController');
 const userController = require('../controllers/userController');
+const messageController = require('../controllers/messageController');
 
 //index and create route
 router.route('/artwork')
   .get(artworkController.index)
-  .post(artworkController.create);
+  .post(secureRoute, artworkController.create);
 
 //show, update and delete router
 router.route('/artwork/:id')
@@ -37,6 +38,12 @@ router.get('/purchases', secureRoute, purchasesController.userIndex);
 router.route('/profile/:id')
   .get(userController.show);
 
+//messages
+router.route('/messages')
+  .get(secureRoute, messageController.index)
+  .post(secureRoute, messageController.create);
 
+router.route('/messages/:id')
+  .delete(secureRoute, messageController.delete);
 
 module.exports = router;

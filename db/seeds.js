@@ -3,15 +3,9 @@ const { dbURI } = require('../config/environment');
 mongoose.connect(dbURI);
 const Artwork = require('../models/artwork');
 const User = require('../models/user');
+const Message = require('../models/message');
 
-// const userData = [{
-//   username: 'Dave',
-//   email: 'dave@dave.com',
-//   password: 'pass',
-//   passwordValidation: 'pass',
-//   bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
-//   profilePicture: 'image'
-// }];
+
 
 const userIds = [
   '5c0a5555c333a575f6c5d0aa',
@@ -140,18 +134,66 @@ const artworkData = [
       rating: 5,
       content: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
     }]
+  }, {
+    createdBy: userIds[0],
+    name: 'Strands',
+    price: 460,
+    artist: 'Freya Hollingberry',
+    yearPainted: 2014,
+    description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+    image: './assets/strands.jpg',
+    medium: 'Recycled Bottletops',
+    locationOfArtist: 'Bristol, United Kingdom',
+    comments: [{
+      title: 'Wow!',
+      rating: 5,
+      content: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
+    }]
   }
 ];
 
+const messageData = [
+  {
+    from: userIds[0],
+    to: userIds[2],
+    content: 'hello!'
+  }, {
+    from: userIds[1],
+    to: userIds[3],
+    content: 'hi polly!'
+  }, {
+    from: userIds[2],
+    to: userIds[0],
+    content: 'Camilla! Love your work!'
+  }
+];
+
+mongoose.connect(dbURI);
 Artwork.collection.drop();
 User.collection.drop();
+Message.collection.drop();
+
+// Artwork.create(artworkData)
+//   .then(artwork => {
+//     console.log(`Created ${artwork.length} artworks!`);
+//     User.create(userData)
+//       .then(users => {
+//         console.log(`Created ${users.length} users!`);
+//         mongoose.connection.close();
+//       });
+//   });
 
 Artwork.create(artworkData)
   .then(artwork => {
-    console.log(`Created ${artwork.length} artworks!`);
-    User.create(userData)
-      .then(users => {
-        console.log(`Created ${users.length} users!`);
-        mongoose.connection.close();
-      });
-  });
+    console.log(`${artwork.length} artwork created`);
+    return User.create(userData);
+  })
+  .then(users => {
+    console.log(`${users.length} users created`);
+    return Message.create(messageData);
+  })
+  .then(messages => {
+    console.log(`${messages.length} messages created`);
+    mongoose.connection.close();
+  })
+  .catch(err => console.log(err));

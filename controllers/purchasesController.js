@@ -8,13 +8,11 @@ function indexRoute(req, res, next) {
 
 function createRoute(req, res, next) {
   if (Array.isArray(req.body)) {
-    // Add the current user to each element of the purchase array
     req.body.forEach(purchase => {
       purchase.user = req.currentUser._id;
       purchase._id = null;
     });
   } else {
-    // There is only one item in the purchase. Add the current user to it.
     req.body.user = req.currentUser._id;
     req.body._id = null;
   }

@@ -1,6 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 import ArtworkForm from './ArtworkForm';
+import { getToken } from '../../lib/auth';
 
 class ArtworkNew extends React.Component {
   constructor(props) {
@@ -11,9 +12,12 @@ class ArtworkNew extends React.Component {
   }
 
   handleSubmit(e) {
+    const token = getToken();
     e.preventDefault();
     console.log('Submit handled', this.state);
-    axios.post('/api/artwork', this.state)
+    axios.post('/api/artwork', this.state, {
+      headers: {Authorization: `Bearer ${token}`}
+    })
       .then(() => this.props.history.push('/artwork'));
   }
   handleChange(e) {

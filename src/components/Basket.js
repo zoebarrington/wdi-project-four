@@ -48,15 +48,6 @@ class Basket extends React.Component {
             <div className="column is-3">
               <p>{item.name}</p>
             </div>
-            <div className="column is-3" onDoubleClick={() => this.handleQuantityDoubleClick(item)}>
-              {(this.state.editing === item._id) ?
-                <form onSubmit={this.handleEditSubmit}>
-                  <input className="input" type="number" value={this.state.editQuantity} name="editQuantity" onChange={this.handleChange}/>
-                </form>
-                :
-                <p>{item.quantity}</p>
-              }
-            </div>
             <div className="column is-3">
               <p>£{item.price}</p>
             </div>

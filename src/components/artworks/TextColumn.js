@@ -1,7 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-
 function TextColumn({ artwork, handleDelete }) {
   return (
     <div className="column is-6">
@@ -9,8 +8,8 @@ function TextColumn({ artwork, handleDelete }) {
 
       <p>£{artwork.price}</p>
       <p>£{artwork.description}</p>
-      <button onClick={ handleDelete }>Delete</button>
-      <button><Link to={`/artwork/${artwork._id}/edit`}>Edit da art!</Link></button>
+      <button onClick={ handleDelete }>DELETE</button>
+      <button><Link to={`/artwork/${artwork._id}/edit`}>EDIT</Link></button>
 
     </div>
   );

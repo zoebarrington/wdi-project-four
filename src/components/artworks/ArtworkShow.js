@@ -5,6 +5,7 @@ import ImageColumn from './ImageColumn';
 import TextColumn from './TextColumn';
 
 import { addItem } from '../../lib/basket';
+import { getToken } from '../../lib/auth';
 
 
 export default class ArtworkShow extends React.Component {
@@ -33,8 +34,11 @@ export default class ArtworkShow extends React.Component {
     this.setState({ [name]: value });
   }
   handleDelete() {
+    const token = getToken();
     console.log('clicked!');
-    axios.delete(`/api/artwork/${this.state.artwork._id}`)
+    axios.delete(`/api/artwork/${this.state.artwork._id}`, {
+      headers: {Authorization: `Bearer ${token}`}
+    })
       .then(() => {
         this.props.history.push('/artwork');
       });
@@ -53,10 +57,7 @@ export default class ArtworkShow extends React.Component {
             </div>
             <hr />
             <div className="columns">
-              <div className="field column is-8">
-                <label htmlFor="quantity" className="label">Quantity</label>
-                <input className="input" type="number" name="quantity"
-                  value={this.state.quantity || 0} onChange={this.handleChange}/>
+              <div className="column is-8">
               </div>
               <div className="column is-4">
                 <button className="button" onClick={this.handleClick}>Add to basket</button>

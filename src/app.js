@@ -10,6 +10,7 @@ import ArtworkEdit from './components/artworks/ArtworkEdit';
 import Header from './components/Header';
 import ArtworkNew from './components/artworks/ArtworkNew';
 import Home from './components/Home';
+import Messages from './components/messages/Messages';
 import Basket from './components/Basket';
 import PurchaseHistory from './components/PurchaseHistory';
 import Profile from './components/auth/Profile';
@@ -38,6 +39,7 @@ class App extends React.Component {
               <Route exact path="/login" component={AuthLogin} />
               <Route exact path="/register" component={AuthRegister} />
               <Route path="/profile/:id" component={Profile} />
+              <Route path="/messages" component={Messages} />
             </Switch>
           </main>
         </div>

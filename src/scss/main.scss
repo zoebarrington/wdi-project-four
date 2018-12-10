@@ -1,9 +1,6 @@
-.navbar {
+.navbar1 {
 background-color: black;
 display: flex;
-  .navbar-item.has-dropdown.is-hoverable {
-    background-color: pink;
-  }
 }
 
 .index-container {
@@ -18,4 +15,28 @@ display: flex;
 
 #profile-pic {
   width: 50px;
+}
+
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  background: white;
+  font-size: 24px;
+  padding: 25px;
+}
+
+.parallax {
+  background: url('https://images.ecosia.org/OdKPDjipi-3P2aCRZuv0yv3yJ5E=/0x390/smart/http%3A%2F%2Fwww.industrialoutpost.com%2Fwp-content%2Fuploads%2F2016%2F02%2Foil-painting-1128693_1280.jpg') no-repeat center;
+  background-size: cover;
+  background-attachment: fixed;
+  height: 500px;
+
+}
+
+.parallax2 {
+  background: url('https://images.ecosia.org/OdKPDjipi-3P2aCRZuv0yv3yJ5E=/0x390/smart/http%3A%2F%2Fwww.industrialoutpost.com%2Fwp-content%2Fuploads%2F2016%2F02%2Foil-painting-1128693_1280.jpg') no-repeat center;
+  background-size: cover;
+  background-attachment: fixed;
+  height: 500px;
+
 }
