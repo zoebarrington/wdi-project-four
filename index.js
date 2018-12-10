@@ -7,7 +7,7 @@ const { port, dbURI } = require('./config/environment');
 
 
 const mongoose = require('mongoose');
-// mongoose.Promise = require('bluebird');
+mongoose.Promise = require('bluebird');
 mongoose.connect(dbURI);
 
 app.use(express.static(`${__dirname}/public`));

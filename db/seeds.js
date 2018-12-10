@@ -54,6 +54,7 @@ const artworkData = [
     image: './assets/blueladies.jpg',
     medium: 'Watercolour',
     locationOfArtist: 'London, United Kingdom',
+    location: { lat: 43.6666944, lng: -79.3155959 },
     comments: [{
       title: 'Love this!',
       rating: 5,
@@ -69,6 +70,7 @@ const artworkData = [
     image: './assets/christmascruella.jpg',
     medium: 'Pencil and Watercolour',
     locationOfArtist: 'Madrid, Spain',
+    location: { lat: 43.6666944, lng: -79.3155959 },
     comments: [{
       title: 'Unique!',
       rating: 3,
@@ -84,6 +86,7 @@ const artworkData = [
     image: './assets/noboysallowed.jpg',
     medium: 'Oil on Canvas',
     locationOfArtist: 'New York City, USA',
+    location: { lat: 43.6666944, lng: -79.3155959 },
     comments: [{
       title: 'Simple and effective!',
       rating: 3,
@@ -99,6 +102,7 @@ const artworkData = [
     image: './assets/Era.jpg',
     medium: 'Recycled Bottletops',
     locationOfArtist: 'Bristol, United Kingdom',
+    location: { lat: 43.6666944, lng: -79.3155959 },
     comments: [{
       title: 'Love sustainable art!',
       rating: 5,
@@ -114,6 +118,7 @@ const artworkData = [
     image: './assets/cherubpink.jpg',
     medium: 'Recycled Bottletops',
     locationOfArtist: 'Bristol, United Kingdom',
+    location: { lat: 43.6666944, lng: -79.3155959 },
     comments: [{
       title: 'Wow! So impressive!',
       rating: 4,
@@ -129,6 +134,7 @@ const artworkData = [
     image: './assets/prancing.jpg',
     medium: 'Watercolour and Pencil',
     locationOfArtist: 'London, United Kingdom',
+    location: { lat: 43.6666944, lng: -79.3155959 },
     comments: [{
       title: 'Incredible!',
       rating: 5,
@@ -144,6 +150,7 @@ const artworkData = [
     image: './assets/strands.jpg',
     medium: 'Recycled Bottletops',
     locationOfArtist: 'Bristol, United Kingdom',
+    location: { lat: 43.6666944, lng: -79.3155959 },
     comments: [{
       title: 'Wow!',
       rating: 5,

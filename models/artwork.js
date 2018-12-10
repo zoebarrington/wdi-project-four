@@ -13,6 +13,10 @@ const artworkSchema = mongoose.Schema({
   image: String,
   medium: String,
   locationOfArtist: String,
+  location: {
+    lat: {type: Number},
+    lng: {type: Number}
+  },
   comments: [{
     title: String,
     rating: Number,
