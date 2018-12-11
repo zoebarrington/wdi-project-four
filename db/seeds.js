@@ -41,7 +41,7 @@ const userData = [{
   email: 'polly@baker',
   password: 'pass',
   bio: 'Polly Baker is a fine artist currently living in Madrid, Spain. She has an extremely successful line of witty cards that are typically created with watercolour and pencil.',
-  profilePicture: 'image'
+  profilePicture: '../assets/polly-2.jpg'
 }];
 
 const artworkData = [
