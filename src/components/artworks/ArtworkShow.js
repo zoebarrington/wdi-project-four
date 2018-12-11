@@ -8,6 +8,7 @@ import { addItem } from '../../lib/basket';
 import { getToken } from '../../lib/auth';
 
 
+
 export default class ArtworkShow extends React.Component {
   constructor(props) {
     super(props);
@@ -53,19 +54,13 @@ export default class ArtworkShow extends React.Component {
           <div>
             <div className="columns">
               <ImageColumn artwork={artwork} />
-              <TextColumn artwork={artwork} handleDelete={this.handleDelete}/>
-            </div>
-            <hr />
-            <div className="columns">
-              <div className="column is-8">
-              </div>
-              <div className="column is-4">
-                <button className="button" onClick={this.handleClick}>Add to basket</button>
-              </div>
+              <TextColumn artwork={artwork} handleDelete={this.handleDelete} handleClick={this.handleClick}/>
             </div>
           </div>
           :
           <p>Please wait...</p>}
+
+
       </section>
     );
   }

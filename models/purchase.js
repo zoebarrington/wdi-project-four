@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 
 const purchaseSchema = new mongoose.Schema({
-  burger: { type: mongoose.Schema.ObjectId, ref: 'Artwork', required: true },
+  artwork: { type: mongoose.Schema.ObjectId, ref: 'Artwork', required: true },
   user: { type: mongoose.Schema.ObjectId, ref: 'User', required: true },
   price: Number,
   quantity: Number,

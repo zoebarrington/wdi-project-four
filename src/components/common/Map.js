@@ -13,7 +13,7 @@ const ArtworkMap = ({ userPosition, artworks }) => {
         />
         {userPosition && <Marker position={userPosition}>
           <Popup>
-    You!
+            You!
           </Popup>
         </Marker>}
         {artworks && artworks.map(artwork =>

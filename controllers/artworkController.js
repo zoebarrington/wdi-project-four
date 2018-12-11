@@ -9,7 +9,7 @@ function indexRoute(req, res, next) {
 //show route
 function showRoute(req, res, next) {
   Artwork.findById(req.params.id)
-    .populate('createdBy name.createdBy')
+    .populate('artworkAdded')
     .then(artwork => res.json(artwork))
     .catch(next);
 }

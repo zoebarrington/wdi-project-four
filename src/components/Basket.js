@@ -59,13 +59,13 @@ class Basket extends React.Component {
         {basket && hasItems &&
           <section className="columns">
             <div className="column">
-              <button className="button is-warning" onClick={() => this.setState({ basket: basketLib.createBasket() })}>Clear basket</button>
+              <button className="basket-button is-warning" onClick={() => this.setState({ basket: basketLib.createBasket() })}>Clear basket</button>
             </div>
             <div className="column">
               <p className="column">Total price: £{basketLib.totalBasketPrice()}</p>
             </div>
             <div className="column">
-              <button className="button is-link" onClick={this.checkout}>Check out</button>
+              <button className="basket-button is-link" onClick={this.checkout}>Check out</button>
             </div>
           </section>
         }

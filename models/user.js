@@ -15,7 +15,10 @@ const userSchema = new mongoose.Schema({
   email: String,
   password: String,
   bio: String,
-  profilePicture: String
+  profilePicture: String,
+  followedBy: [{
+    type: mongoose.Schema.ObjectId, ref: 'User'
+  }]
 });
 
 userSchema.virtual('artworkAdded', {
@@ -27,11 +30,14 @@ userSchema.virtual('artworkAdded', {
 userSchema.plugin(require('mongoose-unique-validator'));
 
 userSchema.set('toJSON', {
+  virtuals: true,
   transform(doc, json) {
     delete json.password;
     return json;
   }
 });
+
+
 
 userSchema.methods.validatePassword = function validatePassword(password){
   return bcrypt.compareSync(password, this.password);

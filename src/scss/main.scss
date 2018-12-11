@@ -1,6 +1,25 @@
-.navbar1 {
-background-color: black;
-display: flex;
+.body {
+  font-family: 'Oswald', sans-serif;
+}
+
+
+.navbar-item {
+  text-decoration: none;
+  color: black;
+}
+
+#logo {
+  width: 100px;
+  height: 60px;
+}
+
+#test {
+  width: 230px;
+}
+
+#header {
+  text-decoration: none;
+  color: black;
 }
 
 .index-container {
@@ -25,15 +44,7 @@ display: flex;
   padding: 25px;
 }
 
-.parallax {
-  background: url('https://images.ecosia.org/OdKPDjipi-3P2aCRZuv0yv3yJ5E=/0x390/smart/http%3A%2F%2Fwww.industrialoutpost.com%2Fwp-content%2Fuploads%2F2016%2F02%2Foil-painting-1128693_1280.jpg') no-repeat center;
-  background-size: cover;
-  background-attachment: fixed;
-  height: 500px;
-
-}
-
-.parallax2 {
+.parallax, .parallax2, .parallax3 {
   background: url('https://images.ecosia.org/OdKPDjipi-3P2aCRZuv0yv3yJ5E=/0x390/smart/http%3A%2F%2Fwww.industrialoutpost.com%2Fwp-content%2Fuploads%2F2016%2F02%2Foil-painting-1128693_1280.jpg') no-repeat center;
   background-size: cover;
   background-attachment: fixed;
@@ -49,4 +60,13 @@ display: flex;
 .leaflet-container {
   width: 100%;
   height: 600px;
+}
+
+.basket-section {
+  display: flex;
+  padding-top: 20px;
+}
+
+.hello {
+  background-color: red;
 }

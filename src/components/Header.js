@@ -14,41 +14,27 @@ class Header extends React.Component {
 
   render() {
     return (
-      <section>
+      <section id="header">
         <nav className="navbar-end">
-          <Link className="navbar-start" to="/"><img src="http://artxchange.org/wp-content/uploads/2017/04/ArtX_Logo_Gallery_RED-1-e1493498798972.png"/></Link>
-          <a className="navbar-item">
-            <Link className="navbar-item" to="/">Home</Link>
-          </a>
-          <Link className="navbar-item" to="/artwork">Index</Link>
-          {isAuthenticated() && <Link className="navbar-item" to="/messages">Messages</Link>}
+          <Link id="logo" className="navbar-start" to="/"><img src="http://artxchange.org/wp-content/uploads/2017/04/ArtX_Logo_Gallery_RED-1-e1493498798972.png"/></Link>
+          <Link className="navbar-item" to="/">HOME</Link>
+          <Link className="navbar-item" to="/artwork">INDEX</Link>
+          {isAuthenticated() && <Link className="navbar-item" to="/messages">MESSAGES</Link>}
           <div className="navbar-item has-dropdown is-hoverable">
             <a className="navbar-link">
-              Account
+              ACCOUNT
             </a>
             <div className="navbar-dropdown is-right">
-              <a className="navbar-item">
-                {!isAuthenticated() && <Link className="navbar-item" to="/login">Log In</Link>}
-              </a>
-              <a className="navbar-item">
-                {!isAuthenticated() && <Link className="navbar-item" to="/register">Register</Link>}
-              </a>
-              <a className="navbar-item">
-                {isAuthenticated() && <Link className="navbar-item" to='/artwork/new'>Add a Artwork</Link>}
-              </a>
-              <a className="navbar-item">
-                {isAuthenticated() && <Link className="navbar-item" to="/basket">Basket</Link>}
-              </a>
-              <a className="navbar-item">
-                {isAuthenticated() && <Link className="navbar-item" to={`/profile/${decodeToken().sub}`}>Profile</Link>}
-              </a>
-              <a className="navbar-item">
-                {isAuthenticated() && <a onClick={this.handleLogout} className="navbar-item">Log Out</a>}
-              </a>
+              {!isAuthenticated() && <Link className="navbar-item" to="/login">LOG IN</Link>}
+              {!isAuthenticated() && <Link className="navbar-item" to="/register">REGISTER</Link>}
+              {isAuthenticated() && <Link className="navbar-item" to='/artwork/new'>ADD AN ARTWORK</Link>}
+              {isAuthenticated() && <Link className="navbar-item" to="/basket">BASKET</Link>}
+              {isAuthenticated() && <Link className="navbar-item" to={`/profile/${decodeToken().sub}`}>PROFILE</Link>}
+              {isAuthenticated() && <a onClick={this.handleLogout} className="navbar-item">LOG OUT</a>}
             </div>
           </div>
         </nav>
-        {isAuthenticated() && <p>Welcome back! {decodeToken().username}</p>}
+        {isAuthenticated() && <p>WELCOME BACK {decodeToken().username.toUpperCase()}!</p>}
 
       </section>
     );

@@ -36,11 +36,12 @@ router.get('/purchases', secureRoute, purchasesController.userIndex);
 
 //Profile
 router.route('/profile/:id')
-  .get(userController.show);
+  .get(secureRoute, userController.show)
+  .put(secureRoute, userController.updateFollowers);
 
 //messages
 router.route('/messages')
-  .get(secureRoute, messageController.index)
+  .get( messageController.index)
   .post(secureRoute, messageController.create);
 
 router.route('/messages/:id')

@@ -10,7 +10,8 @@ const Message = require('../models/message');
 const userIds = [
   '5c0a5555c333a575f6c5d0aa',
   '5c0a5555c333a575f6c5d0ab',
-  '5c0a5555c333a575f6c5d0ac'
+  '5c0a5555c333a575f6c5d0ac',
+  '5c0a5555c333a575f6c5d0af'
 ];
 
 const userData = [{
@@ -39,7 +40,7 @@ const userData = [{
   username: 'pollybaker',
   email: 'polly@baker',
   password: 'pass',
-  bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+  bio: 'Polly Baker is a fine artist currently living in Madrid, Spain. She has an extremely successful line of witty cards that are typically created with watercolour and pencil.',
   profilePicture: 'image'
 }];
 
@@ -150,6 +151,70 @@ const artworkData = [
     image: './assets/strands.jpg',
     medium: 'Recycled Bottletops',
     locationOfArtist: 'Bristol, United Kingdom',
+    location: { lat: 43.6666944, lng: -79.3155959 },
+    comments: [{
+      title: 'Wow!',
+      rating: 5,
+      content: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
+    }]
+  }, {
+    createdBy: userIds[2],
+    name: 'Crying Friend',
+    price: 250,
+    artist: 'Clay Petereson',
+    yearPainted: 2014,
+    description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+    image: './assets/crying.jpg',
+    medium: 'Oil on Canvas',
+    locationOfArtist: 'New York City, USA',
+    location: { lat: 43.6666944, lng: -79.3155959 },
+    comments: [{
+      title: 'Wow!',
+      rating: 5,
+      content: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
+    }]
+  }, {
+    createdBy: userIds[3],
+    name: 'Smashed Avocado',
+    price: 80,
+    artist: 'Polly Baker',
+    yearPainted: 2013,
+    description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+    image: './assets/avocado.jpg',
+    medium: 'Watercolour',
+    locationOfArtist: 'Madrid, Spain',
+    location: { lat: 43.6666944, lng: -79.3155959 },
+    comments: [{
+      title: 'Wow!',
+      rating: 5,
+      content: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
+    }]
+  }, {
+    createdBy: userIds[1],
+    name: 'Stars',
+    price: 600,
+    artist: 'Freya Hollingberry',
+    yearPainted: 2013,
+    description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+    image: './assets/stars.jpg',
+    medium: 'Recycled Bottletops',
+    locationOfArtist: 'Bristol, United Kingdom',
+    location: { lat: 43.6666944, lng: -79.3155959 },
+    comments: [{
+      title: 'Wow!',
+      rating: 5,
+      content: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
+    }]
+  }, {
+    createdBy: userIds[1],
+    name: 'Gluten-free Bread',
+    price: 70,
+    artist: 'Polly Baker',
+    yearPainted: 2013,
+    description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+    image: '../assets/polly-2.jpg',
+    medium: 'Watercolour and Pencil',
+    locationOfArtist: 'Madrid, Spain',
     location: { lat: 43.6666944, lng: -79.3155959 },
     comments: [{
       title: 'Wow!',
