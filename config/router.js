@@ -41,7 +41,7 @@ router.route('/profile/:id')
 
 //messages
 router.route('/messages')
-  .get( messageController.index)
+  .get( secureRoute, messageController.index)
   .post(secureRoute, messageController.create);
 
 router.route('/messages/:id')

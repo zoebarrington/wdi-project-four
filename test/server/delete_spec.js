@@ -11,15 +11,6 @@ const userIds = [
   '5c0a5555c333a575f6c5d0aa'
 ];
 
-// const userData = [{
-//   _id: userIds [0],
-//   username: 'camilladown',
-//   email: 'camilla@down',
-//   password: 'pass',
-//   bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
-//   profilePicture: 'image'
-// }];
-
 const artworkData = [
   {
     createdBy: userIds[0],
@@ -31,6 +22,7 @@ const artworkData = [
     image: './assets/blueladies.jpg',
     medium: 'Watercolour',
     locationOfArtist: 'London, United Kingdom',
+    location: { lat: 43.6666944, lng: -79.3155959 },
     comments: [{
       title: 'Love this!',
       rating: 5,
@@ -39,15 +31,21 @@ const artworkData = [
   }];
 
 let token;
+let artworkId;
 
-describe('Artwork CREATE', () => {
+
+describe('Artwork DELETE', () => {
 
   beforeEach(done => {
     Artwork.remove({})
+      .then(() => Artwork.create(artworkData))
+      .then(artwork => {
+        artworkId = artwork._id;
+      })
       .then(() => User.remove({}))
       .then(() => User.create({
-        username: 'test',
         email: 'test',
+        username: 'test',
         password: 'test'
       }))
       .then(user => {
@@ -55,44 +53,21 @@ describe('Artwork CREATE', () => {
         done();
       });
   });
-
   it('should return a 401 response without a token', done => {
-    api.post('/api/artwork')
+    api.delete(`/api/artwork/${artworkId}`)
       .end((err, res) => {
         expect(res.status).to.eq(401);
         done();
       });
   });
 
-  it('should return a 200 response', done => {
-    api.post('/api/artwork')
-      .set('Authorization', `Bearer ${token}`)
-      .send(artworkData)
-      .end((err, res) => {
-        expect(res.status).to.eq(200);
-        done();
-      });
-  });
-
-  it('should return an object', done => {
-    api.post('/api/artwork')
-      .set('Authorization', `Bearer ${token}`)
-      .send(artworkData)
-      .end((err, res) => {
-        expect(res).to.be.an('object');
-        done();
-      });
-  });
-
-  it('should return the correct data', done => {
-    api.post('/api/artwork')
-      .set('Authorization', `Bearer ${token}`)
-      .send(artworkData)
-      .end((err, res) => {
-        expect(res.body.name).to.eq(artworkData.name);
-        expect(res.body.price).to.eq(artworkData.price);
-        expect(res.body.yearPainted).to.eq(artworkData.yearPainted);
-        done();
-      });
-  });
+  // it('should return a 204 response', done => {
+  //   api.delete(`/api/artwork/${artworkId}`)
+  //     .set('Authorization', `Bearer ${token}`)
+  //     .send(artworkData)
+  //     .end((err, res) => {
+  //       expect(res.status).to.eq(204);
+  //       done();
+  //     });
+  // });
 });

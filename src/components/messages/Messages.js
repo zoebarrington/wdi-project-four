@@ -16,7 +16,7 @@ class Messages extends React.Component {
   }
 
   componentDidMount() {
-    axios.get('/api/messages')
+    axios.get('/api/messages', authorizationHeader())
       .then(result => this.setState({ messages: result.data }, () => console.log('this is message', this.state.messages)));
   }
 
