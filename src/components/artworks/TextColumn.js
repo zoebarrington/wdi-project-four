@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-function TextColumn({ artwork, handleDelete, handleClick }) {
+function TextColumn({ artwork, handleDelete, handleClick, totalPrice, selectedCurrency }) {
   console.log('added by', artwork.createdBy);
   return (
     <div className="column is-6">
@@ -13,7 +13,7 @@ function TextColumn({ artwork, handleDelete, handleClick }) {
       <button onClick={ handleDelete }><i className="fas fa-trash-alt"></i></button>
       <button><Link to={`/artwork/${artwork._id}/edit`}><i className="fas fa-edit"></i></Link></button>
       <div className="basket-section">
-        <p>£{artwork.price}</p>
+        <p>{selectedCurrency === 'GBP' ? '£' : `${selectedCurrency} `}{totalPrice}</p>
         <button className="button" onClick={handleClick}>Add to basket</button>
       </div>
     </div>

@@ -16,6 +16,7 @@ export default class ArtworkShow extends React.Component {
     this.handleChange = this.handleChange.bind(this);
     this.handleDelete = this.handleDelete.bind(this);
     this.handleClick = this.handleClick.bind(this);
+    this.calculateTotal = this.calculateTotal.bind(this);
   }
 
   componentDidMount() {
@@ -24,19 +25,24 @@ export default class ArtworkShow extends React.Component {
       .then(result => {
         artwork = result.data;
         axios
-          .get('https://v3.exchangerate-api.com/bulk/1c1c8a3df8afbf9f0949eb01/USD')
-          .then(result => this.setState({ artwork: artwork, currency: result.data }));
+          .get('https://v3.exchangerate-api.com/bulk/1c1c8a3df8afbf9f0949eb01/GBP')
+          .then(result => this.setState(
+            {
+              artwork: artwork,
+              currency: result.data,
+              selectedCurrency: 'GBP',
+              totalPrice: artwork.price.toFixed(2)
+            }));
       });
   }
-  calculateCurrency() {
-    const currency = this.state.currency;
-    for(let i=0; i<Object.keys(currency.rates).length; i++) {
-      if(Object.keys(currency.rates)[i] === options) {
-        return Object.keys(currency.values);
-      } else {
-        return false;
-      }
-    }
+
+  calculateTotal(value) {
+    //find the price of the artwork
+    const originalPrice = this.state.artwork.price;
+    //find the exchange rate from this.state.currency
+    const rate = this.state.currency.rates[value];
+    // times them together and return the new total.
+    return (originalPrice * rate).toFixed(2);
   }
 
   handleClick() {
@@ -44,10 +50,14 @@ export default class ArtworkShow extends React.Component {
     addItem(this.state.artwork, parseInt(this.state.quantity));
     this.props.history.push('/basket');
   }
+
   handleChange(e) {
-    const { target: {name, value} } = e;
-    this.setState({ [name]: value });
+    const { target: { value } } = e;
+    console.log(value);
+    const total = this.calculateTotal(value);
+    this.setState({ selectedCurrency: value, totalPrice: total });
   }
+
   handleDelete() {
     const token = getToken();
     console.log('clicked!');
@@ -64,28 +74,26 @@ export default class ArtworkShow extends React.Component {
     const currency = this.state.currency;
     return (
       <section>
-        {currency && console.log('currency isssss', Object.keys(currency.rates),Object.keys(currency.rates))};
-
-
-
-
         {artwork
           ?
           <div>
             <div className="columns">
               <ImageColumn artwork={artwork} />
               <div>
-<form onSubmit={this.calculateCurrency}>
-                <select name="currency" onChange={this.handleChange}>
-
-                  {Object.keys(currency.rates) && Object.keys(currency.rates).map( options =>
-                    <option value={options} key={options}>{options}</option>)}
-
-
-                </select>
+                <form onSubmit={this.calculateCurrency}>
+                  <select name="currency" onChange={this.handleChange}>
+                    {currency && Object.keys(currency.rates).map( options =>
+                      <option value={options} key={options}>{options}</option>)}
+                  </select>
                 </form>
               </div>
-              <TextColumn artwork={artwork} handleDelete={this.handleDelete} handleClick={this.handleClick}/>
+              <TextColumn
+                artwork={artwork}
+                handleDelete={this.handleDelete}
+                handleClick={this.handleClick}
+                totalPrice={this.state.totalPrice}
+                selectedCurrency={this.state.selectedCurrency}
+              />
             </div>
           </div>
           :

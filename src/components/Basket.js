@@ -45,6 +45,9 @@ class Basket extends React.Component {
         <h1>Items in your basket</h1>
         {basket && hasItems ? basket.map(item =>
           <div key={item._id} className="columns">
+          <div className="column is-3">
+          <img src={item.image}/>
+          </div>
             <div className="column is-3">
               <p>{item.name}</p>
             </div>
