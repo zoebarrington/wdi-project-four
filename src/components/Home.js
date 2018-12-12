@@ -9,7 +9,7 @@ function Home() {
     </div>
     <h3><strong>CONCEPT</strong></h3>
     <hr />
-    <p>Art Xchange was founded in 2013 by two friends who wanted to buy art, but found that they couldn't afford any of it!</p>
+    <p>Art Xchange was founded in 2013 by two university art students who wanted to buy art, but found that they couldn't afford any of it! They decided that the power of art was too great not ot be accessible to everyone, and so decided to embark on a project to solve this. And thus, Art Xchange was born. </p>
     </div>
     <div className="parallax2">
     </div>

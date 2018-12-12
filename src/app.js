@@ -8,6 +8,7 @@ import AuthLogin from './components/auth/Login';
 import AuthRegister from './components/auth/Register';
 import ArtworkEdit from './components/artworks/ArtworkEdit';
 import Header from './components/Header';
+import Footer from './components/Footer';
 import ArtworkNew from './components/artworks/ArtworkNew';
 import Home from './components/Home';
 import Messages from './components/messages/Messages';
@@ -38,10 +39,11 @@ class App extends React.Component {
               <Route path="/artwork/:id" component={ArtworkShow} />
               <Route exact path="/login" component={AuthLogin} />
               <Route exact path="/register" component={AuthRegister} />
-              <Route path="/profile/:id" component={Profile} />
+              <Route exact path="/profile/:id" component={Profile} />
               <Route path="/messages" component={Messages} />
             </Switch>
           </main>
+          <Footer />
         </div>
       </BrowserRouter>
     );

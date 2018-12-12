@@ -3,7 +3,7 @@
 }
 
 
-.navbar-item {
+#nav-item {
   text-decoration: none;
   color: black;
 }
@@ -33,7 +33,9 @@
 }
 
 #profile-pic {
-  width: 50px;
+  width: 70px;
+  border-radius: 100%;
+  align-items: center;
 }
 
 .container {
@@ -69,4 +71,26 @@
 
 .hello {
   background-color: red;
+}
+
+#profile-bio {
+  font-size: 15px;
+}
+
+.footer {
+  display: flex;
+  justify-content: center;
+  i {
+    padding: 10px;
+  }
+}
+
+.navbar-underline {
+  display: block;
+  width: calc(100% - 23px);
+  height: 4px;
+  background: #800020;
+  position: absolute;
+  left: 10px;
+  bottom: -10px;
 }

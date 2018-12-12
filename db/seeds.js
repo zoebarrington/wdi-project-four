@@ -212,7 +212,7 @@ const artworkData = [
     artist: 'Polly Baker',
     yearPainted: 2013,
     description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
-    image: '../assets/polly-2.jpg',
+    image: 'https://scontent-lhr3-1.xx.fbcdn.net/v/t1.0-9/26804341_1813763841967646_3241041667162109107_n.png?_nc_cat=111&_nc_ht=scontent-lhr3-1.xx&oh=0ed3ca3b26c6645fc4f7223ad228a152&oe=5CA65596',
     medium: 'Watercolour and Pencil',
     locationOfArtist: 'Madrid, Spain',
     location: { lat: 43.6666944, lng: -79.3155959 },

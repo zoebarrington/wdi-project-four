@@ -15,7 +15,7 @@ class Profile extends React.Component {
     this.getLocation = this.getLocation.bind(this);
     this.getArtworks = this.getArtworks.bind(this);
     this.handleFollow = this.handleFollow.bind(this);
-    console.log('this is user id', decodeToken().sub);
+    console.log('this is user id', this.props.match.params);
   }
 
   getLocation(pos) {
@@ -25,7 +25,7 @@ class Profile extends React.Component {
   }
 
   getArtworks() {
-    axios.get(`/api/profile/${decodeToken().sub}`)
+    axios.get(`/api/profile/${this.props.match.params.userId}`)
       .then(res => this.setState({ artworks: res.data }));
   }
 
@@ -44,7 +44,7 @@ class Profile extends React.Component {
 
   componentDidMount() {
     const token = getToken();
-    axios.get(`/api/profile/${decodeToken().sub}`, {
+    axios.get(`/api/profile/${this.props.match.params.id}`, {
       headers: { Authorization: `Bearer ${token}`}
     })
       .then(result => {
@@ -60,12 +60,20 @@ class Profile extends React.Component {
         navigator.geolocation.getCurrentPosition(this.getLocation, this.getArtworks);
       });
   }
+  componentDidUpdate() {
+    if(`${decodeToken().sub}` === this.props.match.params.id){
+      axios.get(`api/profile/${decodeToken().sub}`)
+        .then(result => {
+          this.setState({ user: result.data});
+        });
+    }
+  }
   render() {
     const user= this.state.user;
     console.log('user', user);
     return (
 
-      <div className="profile-page columns">
+      <div className="profile-page columns is-multiline">
         <div className="card is-shady column is-3">
           {this.state.user
             ?
@@ -73,7 +81,7 @@ class Profile extends React.Component {
               <div id=" user-info">
                 <p>{this.state.user.username}</p>
                 <img id="profile-pic" src={this.state.user.profilePicture}/>
-                <p>{this.state.user.bio}</p>
+                <p id="profile-bio">{this.state.user.bio}</p>
                 <p>{this.state.user.createdBy}</p>
                 <p>{this.state.user.followedBy.length}</p>
                 <button className="follow" onClick={this.handleFollow}>{ this.state.buttonName }</button>
@@ -84,26 +92,26 @@ class Profile extends React.Component {
           }
         </div>
 
-        <div className="map column is-8">
-          {!this.state.userPosition && !this.state.artworks
-            ?
-            <p>Loading map...</p>
-            :
-            <ArtworkMap
-              userPosition={this.state.userPosition}
-              artworks={this.state.artworks} />
-          }
-        </div>
 
-        <div className="user-uploads">
+        <div className="user-uploads column is-9">
           {this.state.user
             ?
             this.state.user.artworkAdded && this.state.user.artworkAdded.map(
-              artwork => <div key = { artwork._id}> <p>{artwork.name}</p> </div>
+              artwork => <div key = { artwork._id}> <img src={artwork.image}/> </div>
             )
             :
             <p>Loading...</p>
           }
+        </div>
+        <div className="map columns column is-12">
+        {!this.state.userPosition && !this.state.artworks
+          ?
+          <p>Loading map...</p>
+          :
+          <ArtworkMap
+          userPosition={this.state.userPosition}
+          artworks={this.state.artworks} />
+        }
         </div>
       </div>
 
