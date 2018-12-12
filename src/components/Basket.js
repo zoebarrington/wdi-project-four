@@ -46,7 +46,7 @@ class Basket extends React.Component {
         {basket && hasItems ? basket.map(item =>
           <div key={item._id} className="columns">
           <div className="column is-3">
-          <img src={item.image}/>
+          <div className="show-images" style={{ backgroundImage: `url('/assets/${item.image}')` }}></div>
           </div>
             <div className="column is-3">
               <p>{item.name}</p>

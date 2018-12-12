@@ -13,7 +13,7 @@ function Compose(props) {
         <div className="field">
           <p className="control">
             <textarea className="textarea"
-              placeholder="Add a comment..."
+              placeholder="Write your message..."
               name="newMessage"
               value={props.newMessage || ''}
               onChange={props.handleChange}
@@ -24,7 +24,7 @@ function Compose(props) {
         <nav className="level">
           <div className="level-left">
             <div className="level-item" onClick={props.handleSubmit}>
-              <a className="button is-info" disabled={!props.withUserId}>Submit</a>
+              <a id="messenger-button" className="button is-info" disabled={!props.withUserId}>Send</a>
             </div>
           </div>
         </nav>

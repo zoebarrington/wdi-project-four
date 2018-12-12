@@ -30,11 +30,10 @@ class ArtworkEdit extends React.Component {
     return (
       <section className="hero is-light-title is-fullheight">
         <div className="hero-body">
-          <div className="container has-text-centered">
+          <div className="card is-shady container has-text-centered">
             <div className="column is-4 is-offset-4">
               <h3 className="title has-text-black">Edit your artwork</h3>
-              <div className="box">
-              </div>
+              <img src="../../assets/logo.png"/>
               <form onSubmit={this.handleSubmit}>
                 <div className="field">
                   <div className="control">
@@ -53,6 +52,7 @@ class ArtworkEdit extends React.Component {
                     <input onChange={this.handleChange}
                       value={this.state.price || ''}
                       name="price"
+                      placeholder="price"
                     />
                   </div>
                 </div>
@@ -63,11 +63,12 @@ class ArtworkEdit extends React.Component {
                     <input onChange={this.handleChange}
                       value={this.state.description || ''}
                       name="description"
+                      placeholder="description"
                     />
                   </div>
                 </div>
 
-                <button>Edit da art!</button>
+                <button id="edit-button" className="button is-block is-info is-small is-fullwidth">EDIT</button>
               </form>
 
             </div>

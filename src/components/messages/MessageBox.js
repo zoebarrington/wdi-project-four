@@ -12,8 +12,8 @@ function MessageBox({ message, handleDelete }) {
       </figure>
       <div className="media-content">
         <div className="content">
-          <p>
-            <strong>{message.from.username}</strong>
+          <p id="messageContentBox">
+            <strong id="username">{message.from.username}</strong>
             <br />
             {message.content}
             <br />

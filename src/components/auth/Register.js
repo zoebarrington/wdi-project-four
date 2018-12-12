@@ -24,6 +24,12 @@ class AuthRegister extends React.Component {
 
   render() {
     return (
+      <section className="hero is-light-title is-fullheight">
+        <div className="hero-body">
+          <div className="card is-shady container has-text-centered">
+            <div className="column is-4 is-offset-4">
+              <h3 className="title has-text-black">Register</h3>
+              <img src="../../assets/logo.png"/>
       <form onSubmit={this.handleSubmit}>
 
         <div className="field">
@@ -76,8 +82,12 @@ class AuthRegister extends React.Component {
             onChange={this.handleChange}
           />
         </div>
-        <button className="button is-primary">Submit</button>
+        <button id="edit-button" className="button is-block is-info is-small is-fullwidth">Register</button>
       </form>
+      </div>
+      </div>
+      </div>
+      </section>
     );
   }
 }

@@ -97,7 +97,7 @@ class Profile extends React.Component {
           {this.state.user
             ?
             this.state.user.artworkAdded && this.state.user.artworkAdded.map(
-              artwork => <div key = { artwork._id}> <img src={artwork.image}/> </div>
+              artwork => <div key = { artwork._id}> <div id="profile-images" style={{ backgroundImage: `url('/assets/${artwork.image}')` }}></div> </div>
             )
             :
             <p>Loading...</p>

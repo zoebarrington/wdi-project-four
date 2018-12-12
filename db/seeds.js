@@ -234,6 +234,14 @@ const messageData = [
     to: userIds[3],
     content: 'hi polly!'
   }, {
+    from: userIds[3],
+    to: userIds[1],
+    content: 'hey freya! how can I help?'
+  }, {
+    from: userIds[1],
+    to: userIds[3],
+    content: 'I would like to buy one of your pieces!'
+  }, {
     from: userIds[2],
     to: userIds[0],
     content: 'Camilla! Love your work!'

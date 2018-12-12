@@ -34,31 +34,23 @@ class ArtworkIndex extends React.Component {
 
 
         <section className="index-container columns is-multiline">
-          <div className="search-bar column is-10">
+          <div className="search-bar column is-12">
             <form>
               <input
                 placeholder="Search for..."
                 ref={input => this.search = input}
                 onChange={this.handleInputChange}
-                className="form-input subtitle is-size-6"
+                className="form-input subtitle is-size-8"
               />
             </form>
+          </div>
 
-            <div className="centered-container column is-4">
-              <hr/>
-              <div>
-                {this.state.query === ''
-                  ?
-                  <h1 className="search-title is-size-4">All Artworks</h1>
-                  :
-                  <h1 className="search-title is-size-4">Search Results</h1>}
-              </div>
-              <div className="columns is-4">
-                {this.state.filteredArtworks &&
+          <div className="centered-container artworkIndex column is-12">
+            <div className="column is-4">
+              {this.state.filteredArtworks &&
           this.state.filteredArtworks.map(
             filteredArtwork => <ArtworkBox key = {filteredArtwork._id} artwork={filteredArtwork}/>
           )}
-              </div>
             </div>
           </div>
         </section>

@@ -22,28 +22,41 @@ class AuthLogin extends React.Component {
       });
   }
 
+
+
+
   render() {
     return (
-      <form onSubmit={this.handleSubmit}>
-        <div className="field">
-          <input
-            className="input"
-            name="email"
-            placeholder="Email"
-            onChange={this.handleChange}
-          />
+      <section className="hero is-light-title is-fullheight">
+        <div className="hero-body">
+          <div className="card is-shady container has-text-centered">
+            <div className="column is-4 is-offset-4">
+              <h3 className="title has-text-black">Log in</h3>
+              <img src="../../assets/logo.png"/>
+              <form onSubmit={this.handleSubmit}>
+                <div className="field">
+                  <input
+                    className="input"
+                    name="email"
+                    placeholder="Email"
+                    onChange={this.handleChange}
+                  />
+                </div>
+                <div className="field">
+                  <input
+                    type="password"
+                    className="input"
+                    name="password"
+                    placeholder="Password"
+                    onChange={this.handleChange}
+                  />
+                </div>
+                <button id="edit-button" className="button is-block is-info is-small is-fullwidth">Login</button>
+              </form>
+            </div>
+          </div>
         </div>
-        <div className="field">
-          <input
-            type="password"
-            className="input"
-            name="password"
-            placeholder="Password"
-            onChange={this.handleChange}
-          />
-        </div>
-        <button className="button is-primary">Submit</button>
-      </form>
+      </section>
     );
   }
 }

@@ -29,7 +29,6 @@ class ArtworkNew extends React.Component {
   render() {
     return(
       <section>
-        <h2 className="title is-2">Add a Artwork</h2>
         <ArtworkForm
           handleChange = {this.handleChange}
           handleSubmit = {this.handleSubmit}

@@ -72,6 +72,12 @@
   padding-top: 20px;
 }
 
+.basket-button {
+  background-color:#800020;
+  color: white;
+  border-radius: 20%;
+}
+
 
 #profile-bio {
   font-size: 15px;
@@ -115,7 +121,7 @@
 .show-images, .index-images {
   background-size: contain;
   background-repeat: no-repeat;
-  height: 500px;
+  height: 150px;
   width: auto;;
 }
 
@@ -157,4 +163,39 @@
       padding: 10px;
     }
   }
+}
+
+#edit-button {
+  background-color: black;
+  color: white;
+  font-family: Oswald, sans-serif;
+  font-size: 15px;
+}
+
+#profile-images {
+  height: 100px;
+  width: 100px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  display: flex;
+}
+
+#messenger-button {
+  background-color: #800020;
+  color: white;
+}
+.artworkIndex{
+  display: flex;
+  flex-wrap: wrap;
+
+}
+
+#messageContentBox, #username {
+  background-color: #800020;
+  color: white;
+}
+
+#affordable-art-fair {
+  border-radius: 100%;
+  width: 200px;
 }
