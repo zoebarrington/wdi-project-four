@@ -19,12 +19,26 @@ export default class ArtworkShow extends React.Component {
   }
 
   componentDidMount() {
+    let artwork;
     axios.get(`/api/artwork/${this.props.match.params.id}`)
-      .then(res => {
-        this.setState({ artwork: res.data });
-        console.log('We have', this.state.artwork);
+      .then(result => {
+        artwork = result.data;
+        axios
+          .get('https://v3.exchangerate-api.com/bulk/1c1c8a3df8afbf9f0949eb01/USD')
+          .then(result => this.setState({ artwork: artwork, currency: result.data }));
       });
   }
+  calculateCurrency() {
+    const currency = this.state.currency;
+    for(let i=0; i<Object.keys(currency.rates).length; i++) {
+      if(Object.keys(currency.rates)[i] === options) {
+        return Object.keys(currency.values);
+      } else {
+        return false;
+      }
+    }
+  }
+
   handleClick() {
     console.log(this.state);
     addItem(this.state.artwork, parseInt(this.state.quantity));
@@ -47,13 +61,30 @@ export default class ArtworkShow extends React.Component {
 
   render() {
     const artwork = this.state.artwork;
+    const currency = this.state.currency;
     return (
       <section>
+        {currency && console.log('currency isssss', Object.keys(currency.rates),Object.keys(currency.rates))};
+
+
+
+
         {artwork
           ?
           <div>
             <div className="columns">
               <ImageColumn artwork={artwork} />
+              <div>
+<form onSubmit={this.calculateCurrency}>
+                <select name="currency" onChange={this.handleChange}>
+
+                  {Object.keys(currency.rates) && Object.keys(currency.rates).map( options =>
+                    <option value={options} key={options}>{options}</option>)}
+
+
+                </select>
+                </form>
+              </div>
               <TextColumn artwork={artwork} handleDelete={this.handleDelete} handleClick={this.handleClick}/>
             </div>
           </div>

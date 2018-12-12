@@ -33,8 +33,8 @@ class ArtworkIndex extends React.Component {
       <main>
 
 
-        <section className="index-container columns">
-          <div className="search-bar column is-3">
+        <section className="index-container columns is-multiline">
+          <div className="search-bar column is-10">
             <form>
               <input
                 placeholder="Search for..."
@@ -44,7 +44,7 @@ class ArtworkIndex extends React.Component {
               />
             </form>
 
-            <div className="centered-container">
+            <div className="centered-container column is-4">
               <hr/>
               <div>
                 {this.state.query === ''
@@ -53,7 +53,7 @@ class ArtworkIndex extends React.Component {
                   :
                   <h1 className="search-title is-size-4">Search Results</h1>}
               </div>
-              <div>
+              <div className="columns is-4">
                 {this.state.filteredArtworks &&
           this.state.filteredArtworks.map(
             filteredArtwork => <ArtworkBox key = {filteredArtwork._id} artwork={filteredArtwork}/>
@@ -61,22 +61,6 @@ class ArtworkIndex extends React.Component {
               </div>
             </div>
           </div>
-
-          <div className="artwork-index column is-8">
-            <h1 className="title">Gallery</h1>
-            <div className="index columns is-multiline is-4">
-              {this.state.artworks
-                ?
-                this.state.artworks.map(artwork => <ArtworkBox key={artwork._id} artwork={artwork}/>)
-                :
-                <p>Loading...</p>
-              }
-            </div>
-          </div>
-
-          <div className="external-api column is-3">
-          </div>
-
         </section>
       </main>
     );

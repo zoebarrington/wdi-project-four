@@ -21,17 +21,17 @@ class Header extends React.Component {
 
           <div className="navbar-item">
             <Link id="nav-item" className="navbar-item" to="/">HOME</Link>
-          <span className="navbar-underline"></span>
+            <span className="navbar-underline"></span>
           </div>
 
           <div className="navbar-item">
-          <Link id="nav-item" className="navbar-item" to="/artwork">INDEX</Link>
-          <span className="navbar-underline"></span>
+            <Link id="nav-item" className="navbar-item" to="/artwork">INDEX</Link>
+            <span className="navbar-underline"></span>
           </div>
 
           <div className="navbar-item">
-          {isAuthenticated() && <Link id="nav-item" className="navbar-item" to="/messages">MESSAGES</Link>}
-          <span className="navbar-underline"></span>
+            {isAuthenticated() && <Link id="nav-item" className="navbar-item" to="/messages">MESSAGES</Link>}
+            <span className="navbar-underline"></span>
           </div>
 
           <div className="navbar-item has-dropdown is-hoverable">
@@ -49,8 +49,8 @@ class Header extends React.Component {
             </div>
           </div>
         </nav>
-        {isAuthenticated() && <p>WELCOME BACK {decodeToken().username.toUpperCase()}!</p>}
 
+        {isAuthenticated() && <p>WELCOME BACK {decodeToken().username.toUpperCase()}!</p>}
       </section>
     );
   }

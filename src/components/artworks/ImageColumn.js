@@ -3,7 +3,7 @@ import React from 'react';
 function ImageColumn({ artwork }) {
   return (
     <div className="column is-6">
-      <img src={artwork.image} alt={artwork.name}/>
+      <div className="show-images" style={{ backgroundImage: `url('/assets/${artwork.image}')` }}></div>
     </div>
   );
 }

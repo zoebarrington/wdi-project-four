@@ -4,7 +4,8 @@ function Home() {
   return (
     <div className="home-page">
     <div className="container">
-    <img id="test" src='../assets/artxchange.jpg'/>
+    <img className="homepage-images" src='../assets/Drawing.jpg'/>
+    <img className="homepage-images" src='../assets/Drawing-2.jpg'/>
     <div className="parallax">
     </div>
     <h3><strong>CONCEPT</strong></h3>

@@ -61,13 +61,13 @@ describe('Artwork DELETE', () => {
       });
   });
 
-  // it('should return a 204 response', done => {
-  //   api.delete(`/api/artwork/${artworkId}`)
-  //     .set('Authorization', `Bearer ${token}`)
-  //     .send(artworkData)
-  //     .end((err, res) => {
-  //       expect(res.status).to.eq(204);
-  //       done();
-  //     });
-  // });
+  it('should return a 204 response', done => {
+    api.delete(`/api/artwork/${artworkId}`)
+      .set('Authorization', `Bearer ${token}`)
+      .send(artworkData)
+      .end((err, res) => {
+        expect(res.status).to.eq(204);
+        done();
+      });
+  });
 });

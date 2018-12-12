@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 const ArtworkMap = ({ userPosition, artworks }) => {
   console.log(artworks);
   return (
-    <div id='map'>
+    <div id='map-id'>
       <Map center={userPosition || artworks[0].location} zoom={14}>
         <TileLayer
           attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'

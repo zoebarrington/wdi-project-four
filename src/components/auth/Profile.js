@@ -104,14 +104,14 @@ class Profile extends React.Component {
           }
         </div>
         <div className="map columns column is-12">
-        {!this.state.userPosition && !this.state.artworks
-          ?
-          <p>Loading map...</p>
-          :
-          <ArtworkMap
-          userPosition={this.state.userPosition}
-          artworks={this.state.artworks} />
-        }
+          {!this.state.userPosition && !this.state.artworks
+            ?
+            <p>Loading map...</p>
+            :
+            <ArtworkMap
+              userPosition={this.state.userPosition}
+              artworks={this.state.artworks} />
+          }
         </div>
       </div>
 

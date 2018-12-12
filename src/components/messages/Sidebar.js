@@ -16,8 +16,7 @@ function Sidebar({ messages, handleClick }) {
   const messageCounts = messages &&
     messages.reduce(messagesInConversation, {});
   return (
-    <div className="hello">
-    <p> hulnihij </p>
+    <div>
       {messageCounts &&
           Object.keys(messageCounts)
             .map(userId =>
