@@ -78,21 +78,17 @@ export default class ArtworkShow extends React.Component {
           ?
           <div>
             <div className="columns">
-              <ImageColumn artwork={artwork} />
-              <div>
-                <form onSubmit={this.calculateCurrency}>
-                  <select name="currency" onChange={this.handleChange}>
-                    {currency && Object.keys(currency.rates).map( options =>
-                      <option value={options} key={options}>{options}</option>)}
-                  </select>
-                </form>
-              </div>
+              <ImageColumn artwork={artwork}
+              />
               <TextColumn
+                totalPrice={this.state.totalPrice}
                 artwork={artwork}
                 handleDelete={this.handleDelete}
-                handleClick={this.handleClick}
-                totalPrice={this.state.totalPrice}
                 selectedCurrency={this.state.selectedCurrency}
+                handleClick={this.handleClick}
+                calculateCurrency={this.calculateCurrency}
+                currency={currency}
+                handleChange={this.handleChange}
               />
             </div>
           </div>

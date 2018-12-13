@@ -20,7 +20,7 @@ const userData = [{
   email: 'camilla@down',
   password: 'pass',
   bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
-  profilePicture: 'image'
+  profilePicture: 'https://scontent-lhr3-1.xx.fbcdn.net/v/t1.0-9/18838873_10155191943406578_2334486335327104049_n.jpg?_nc_cat=109&_nc_ht=scontent-lhr3-1.xx&oh=473138c59c06076fcb6b5a5ed3df47db&oe=5CA07CBB'
 }, {
   _id: userIds [1],
   username: 'freyahollingberry',
@@ -206,15 +206,47 @@ const artworkData = [
       content: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
     }]
   }, {
+    createdBy: userIds[0],
+    name: 'Jamie',
+    price: 200,
+    artist: 'Camilla Down',
+    yearPainted: 2014,
+    description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+    image: 'jamie.jpg',
+    medium: 'Pencil',
+    locationOfArtist: 'Bristol, United Kingdom',
+    location: { lat: 43.6666944, lng: -79.3155959 },
+    comments: [{
+      title: 'Wow!',
+      rating: 5,
+      content: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
+    }]
+  }, {
     createdBy: userIds[1],
-    name: 'Gluten-free Bread',
-    price: 70,
-    artist: 'Polly Baker',
+    name: 'Jungle',
+    price: 800,
+    artist: 'Freya Hollingberry',
     yearPainted: 2013,
     description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
-    image: 'https://scontent-lhr3-1.xx.fbcdn.net/v/t1.0-9/26804341_1813763841967646_3241041667162109107_n.png?_nc_cat=111&_nc_ht=scontent-lhr3-1.xx&oh=0ed3ca3b26c6645fc4f7223ad228a152&oe=5CA65596',
-    medium: 'Watercolour and Pencil',
-    locationOfArtist: 'Madrid, Spain',
+    image: 'jungle.jpg',
+    medium: 'Recycled Bottletops',
+    locationOfArtist: 'Bristol, United Kingdom',
+    location: { lat: 43.6666944, lng: -79.3155959 },
+    comments: [{
+      title: 'Wow!',
+      rating: 5,
+      content: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
+    }]
+  }, {
+    createdBy: userIds[3],
+    name: 'Leisure',
+    price: 80,
+    artist: 'Polly Baker',
+    yearPainted: 2012,
+    description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+    image: 'reading.jpg',
+    medium: 'Pencil',
+    locationOfArtist: 'Bristol, United Kingdom',
     location: { lat: 43.6666944, lng: -79.3155959 },
     comments: [{
       title: 'Wow!',

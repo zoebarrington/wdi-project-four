@@ -16,7 +16,7 @@ class AuthRegister extends React.Component {
       .then(res => {
         saveToken(res.data.token);
       })
-      .then(() => this.props.history.push('/artwork'))
+      .then(() => this.props.history.push('/'))
       .catch(() => {
         this.props.history.replace('/login');
       });

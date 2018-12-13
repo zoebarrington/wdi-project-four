@@ -45,8 +45,8 @@ class ArtworkIndex extends React.Component {
             </form>
           </div>
 
-          <div className="centered-container artworkIndex column is-12">
-            <div className="column is-4">
+          <div className="column is-4">
+            <div >
               {this.state.filteredArtworks &&
           this.state.filteredArtworks.map(
             filteredArtwork => <ArtworkBox key = {filteredArtwork._id} artwork={filteredArtwork}/>

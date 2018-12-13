@@ -50,7 +50,7 @@ class Header extends React.Component {
           </div>
         </nav>
 
-        {isAuthenticated() && <p>WELCOME BACK {decodeToken().username.toUpperCase()}!</p>}
+        {isAuthenticated() && <p id="welcome-back">WELCOME BACK {decodeToken().username.toUpperCase()}!</p>}
       </section>
     );
   }

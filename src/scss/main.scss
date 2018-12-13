@@ -70,14 +70,22 @@
 .basket-section {
   display: flex;
   padding-top: 20px;
+  justify-content: space-between;
+  width: 250px;
+  align-items: center;
 }
 
 .basket-button {
   background-color:#800020;
   color: white;
-  border-radius: 20%;
+  font-family: Oswald, sans-serif;
+  font-size: 20px;
 }
 
+#show-icons {
+  color: #800020;
+  text-decoration: none;
+}
 
 #profile-bio {
   font-size: 15px;
@@ -93,6 +101,7 @@
     z-index: 1;
     color: white;
   }
+
 }
 
 .navbar-underline {
@@ -118,11 +127,18 @@
   height: 300px;
 }
 
-.show-images, .index-images {
+.index-images {
   background-size: contain;
   background-repeat: no-repeat;
   height: 150px;
-  width: auto;;
+  width: auto;
+}
+
+.show-images {
+  background-size: contain;
+  background-repeat: no-repeat;
+  height: 500px;
+  width: auto;
 }
 
 .input-rates {
@@ -197,5 +213,39 @@
 
 #affordable-art-fair {
   border-radius: 100%;
-  width: 200px;
+  height: 200px;
+}
+
+#bottom-homepage {
+  display: flex;
+  justify-content: space-between;
+}
+
+#show-description {
+  font-size: 15px;
+}
+
+#show-artist-name {
+  color: black;
+  text-decoration: none;
+}
+#show-artist-name:hover {
+  color: #800020;
+}
+
+.bottom-text-column {
+  display: flex;
+  justify-content: space-between;
+}
+
+#price {
+  font-size: 15px;
+}
+
+#welcome-back {
+  padding-top: 15px;
+}
+
+.form-input {
+  font-family: Oswald, sans-serif;
 }
