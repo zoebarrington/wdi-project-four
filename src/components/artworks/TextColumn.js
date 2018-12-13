@@ -10,7 +10,7 @@ function TextColumn({ artwork, handleDelete, totalPrice, selectedCurrency, handl
       <Link id="show-artist-name" className="profiles-link" to={`/profile/${artwork.createdBy}`}><p>{artwork.artist}</p></Link>
 
       <p id="show-description">This piece was created by {artwork.artist} in {artwork.yearPainted}.
-        {artwork.artist} lives in {artwork.location} and this piece was created using {artwork.medium}.</p>
+        {artwork.artist} lives in {artwork.locationOfArtist} and this piece was created using {artwork.medium}.</p>
       <button onClick={ handleDelete }><i id="show-icons" className="fas fa-trash-alt"></i></button>
       <button><Link to={`/artwork/${artwork._id}/edit`}><i id="show-icons" className="fas fa-edit"></i></Link></button>
 

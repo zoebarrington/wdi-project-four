@@ -45,14 +45,13 @@ class ArtworkIndex extends React.Component {
             </form>
           </div>
 
-          <div className="column is-4">
-            <div >
-              {this.state.filteredArtworks &&
+
+          {this.state.filteredArtworks &&
           this.state.filteredArtworks.map(
             filteredArtwork => <ArtworkBox key = {filteredArtwork._id} artwork={filteredArtwork}/>
           )}
-            </div>
-          </div>
+
+
         </section>
       </main>
     );

@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 function ArtworkBox({ artwork }) {
   return (
-    <Link to={`/artwork/${artwork._id}`}>
+    <Link className="column is-4" to={`/artwork/${artwork._id}`}>
       <article className="artwork-box">
         <div className="index-images" style={{ backgroundImage: `url('/assets/${artwork.image}')` }}></div>
         <hr />
