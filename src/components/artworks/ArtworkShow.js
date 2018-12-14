@@ -86,7 +86,7 @@ export default class ArtworkShow extends React.Component {
                 handleDelete={this.handleDelete}
                 selectedCurrency={this.state.selectedCurrency}
                 handleClick={this.handleClick}
-                calculateCurrency={this.calculateCurrency}
+                calculateTotal={this.calculateTotal}
                 currency={currency}
                 handleChange={this.handleChange}
               />

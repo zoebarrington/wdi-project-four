@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-function TextColumn({ artwork, handleDelete, totalPrice, selectedCurrency, handleClick, calculateCurrency, currency, handleChange }) {
+function TextColumn({ artwork, handleDelete, totalPrice, selectedCurrency, handleClick, calculateTotal, currency, handleChange }) {
   console.log('added by', artwork.createdBy);
   return (
     <div className="column is-6">
@@ -16,7 +16,7 @@ function TextColumn({ artwork, handleDelete, totalPrice, selectedCurrency, handl
 
       <div className="basket-section">
         <div>
-          <form onSubmit={calculateCurrency}>
+          <form onSubmit={calculateTotal}>
             <select id="select" name="currency" onChange={handleChange}>
               {currency && Object.keys(currency.rates).map( options =>
                 <option value={options} key={options}>{options}</option>)}
@@ -24,9 +24,9 @@ function TextColumn({ artwork, handleDelete, totalPrice, selectedCurrency, handl
           </form>
         </div>
 
-      <p id="price">{selectedCurrency === 'GBP' ? '£' : `${selectedCurrency} `}{totalPrice}</p>
-      <button className="basket-button" onClick={handleClick}>Add to basket</button>
-    </div>
+        <p id="price">{selectedCurrency === 'GBP' ? '£' : `${selectedCurrency} `}{totalPrice}</p>
+        <button className="basket-button" onClick={handleClick}>Add to basket</button>
+      </div>
     </div>
   );
 }
