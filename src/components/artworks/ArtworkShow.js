@@ -25,7 +25,7 @@ export default class ArtworkShow extends React.Component {
       .then(result => {
         artwork = result.data;
         axios
-          .get('https://v3.exchangerate-api.com/bulk/1c1c8a3df8afbf9f0949eb01/GBP')
+          .get('/api/currencies')
           .then(result => this.setState(
             {
               artwork: artwork,

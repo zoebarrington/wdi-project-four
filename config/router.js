@@ -1,4 +1,6 @@
 const router = require('express').Router();
+const rp = require('request-promise');
+const { exchangeRateApiKey } = require('./environment');
 const artworkController = require('../controllers/artworkController');
 const authController = require('../controllers/authController');
 const secureRoute = require('../lib/secureRoute');
@@ -47,4 +49,14 @@ router.route('/messages')
 router.route('/messages/:id')
   .delete(secureRoute, messageController.delete);
 
+router.route('/currencies')
+  .get((req, res, next) => {
+    rp({
+      method: 'GET',
+      json: true,
+      url: `https://v3.exchangerate-api.com/bulk/${exchangeRateApiKey}/GBP`
+    })
+      .then(result => res.json(result))
+      .catch(next);
+  });
 module.exports = router;
