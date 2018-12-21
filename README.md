@@ -48,7 +48,15 @@ Your app must:
 - Google Fonts  
 - Fontawesome
 
-APIs Used:
+## APIs Used
 - Exchange Rate API
 
-Wireframes
+## Wireframes
+
+## Challenges Faced
+
+## Wins
+
+- My greatest win in this project was managed to get the external exchange rate API to work. It took a lot of conceptual planning, and I felt it was my greatest achievement within the project.
+
+- I am proud of all the functionality that I have produced, as well as the styling.
