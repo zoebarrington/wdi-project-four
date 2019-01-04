@@ -20,6 +20,28 @@ Your app must:
 
 **[Github Repository](https://github.com/zoebarrington/wdi-project-four)**
 
+## Home Page  
+![Homepage](screenshots/home-page.png)
+
+## Index Page  
+![Index](screenshots/index-page.png)
+
+## Create Page  
+![Create](screenshots/create-page.png)
+
+## Show Page
+![Show](screenshots/show.png)
+
+## Profile Page  
+![Profile](screenshots/profile.png)
+
+## Messaging
+![Messages](screenshots/messenger.png)
+
+
+
+
+
 ## Technologies Used
 - HTML 5
 - SCSS
@@ -52,6 +74,38 @@ Your app must:
 - Exchange Rate API
 
 ## Wireframes
+
+### Home Page  
+![Home-Wireframe](screenshots/home-wireframe.png)
+
+### Show Page  
+![Show-Wireframe](screenshots/show-wireframe.png)
+
+### Index Page
+![Index-Wireframe](screenshots/index-wireframe.png)
+
+### Create Page  
+![Create](screenshots/create.png)
+
+## Featured Piece of Code no.1
+
+## Featured Piece of Code no.2
+```javascript
+<div className="basket-section">
+  <div>
+    <form onSubmit={calculateTotal}>
+      <select id="select" name="currency" onChange={handleChange}>
+        {currency && Object.keys(currency.rates).map( options =>
+          <option value={options} key={options}>{options}</option>)}
+      </select>
+    </form>
+  </div>
+
+  <p id="price">{selectedCurrency === 'GBP' ? '£' : `${selectedCurrency} `}{totalPrice}</p>
+  <button className="basket-button" onClick={handleClick}>Add to basket</button>
+</div>
+</div>
+```
 
 ## Challenges Faced
 
