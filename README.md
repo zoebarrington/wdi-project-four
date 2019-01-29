@@ -1,7 +1,19 @@
 # **Project 4: Art Xchange**
 
-## Overview
+## Background
 Art Xchange is an E-commerce platform that connects buyers and sellers of affordable art.
+
+Launch on [Heroku](https://artxchange.herokuapp.com/) or check out the GitHub [Repo](https://github.com/zoebarrington/wdi-project-four).
+
+### Course Curriculum
+**Week 10-11** | Module Four  
+* React
+* JSX
+* ES6
+
+*Full curriculum available at the bottom of the page*
+
+***
 
 ## Project Brief
 
@@ -16,15 +28,16 @@ Your app must:
 - A readme.md file
 - Layout and style your front-end with clean and well-formatted CSS
 
-**[Heroku](https://artxchange.herokuapp.com/)**
+**Timeframe:** 1 week(December 2018)
 
-**[Github Repository](https://github.com/zoebarrington/wdi-project-four)**
+## Concept
+Users can use Art Xchange as a platform to buy and sell art at an affordable price, making art accessible to everyone.
 
 ## Home Page  
-![Homepage](screenshots/home-page.png)
+![Homepage](screenshots/art-home.gif)
 
 ## Index Page  
-![Index](screenshots/index-page.png)
+![Index](screenshots/art-index.gif)
 
 ## Create Page  
 ![Create](screenshots/create-page.png)
@@ -38,7 +51,16 @@ Your app must:
 ## Messaging
 ![Messages](screenshots/messenger.png)
 
+## Features
+All Features  
+> All users are able to:
+* Home Page
+* Artwork index and show page
+* Register
 
+> Registered users are able to:
+* Log in and log out
+*
 
 
 
@@ -114,3 +136,49 @@ Your app must:
 - My greatest win in this project was managed to get the external exchange rate API to work. It took a lot of conceptual planning, and I felt it was my greatest achievement within the project.
 
 - I am proud of all the functionality that I have produced, as well as the styling.
+
+## Future Features
+
+***
+
+## Course Curriculum
+
+> **Week 1-3** | Module One  
+* HTML5
+* CSS3 and CSS Animation
+* Sass
+* JavaScript
+* jQuery
+
+> **Week 4** | Project One
+
+> **Week 5** | Module Two  
+* Node.js
+* Express.js
+* EJS
+* MongoDB
+* User Authentication  
+
+> **Week 6** | Project Two
+
+> **Week 7-8** | Module Three
+* AngularJS
+* Token Authentication & Session Authentication
+* Third-party APIs
+* Mocha and Chai
+
+> **Week 9** | Project Three
+
+> **Week 10-11** | Module Four
+* React
+* JSX
+* ES6
+
+>**Week 12** | Project Four
+
+***
+## Contact
+### Zoe Barrington  
+Email: zlfbarrington@gmail.com
+
+[Porfolio](zoebarrington.com) | [LinkedIn](https://www.linkedin.com/notifications/) | [GitHub](https://github.com/zoebarrington)
