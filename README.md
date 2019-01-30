@@ -40,16 +40,16 @@ Users can use Art Xchange as a platform to buy and sell art at an affordable pri
 ![Index](screenshots/art-index.gif)
 
 ## Create Page  
-![Create](screenshots/create-page.png)
+![Create](screenshots/art-create.gif)
 
 ## Show Page
-![Show](screenshots/show.png)
+![Show](screenshots/art-show.gif)
 
 ## Profile Page  
 ![Profile](screenshots/profile.png)
 
 ## Messaging
-![Messages](screenshots/messenger.png)
+![Messages](screenshots/art-messages.gif)
 
 ## Features
 All Features  
