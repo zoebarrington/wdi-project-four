@@ -57,12 +57,16 @@ All Features
 * Home Page
 * Artwork index and show page
 * Register
+* Edit and delete artworks
+* Use the Exchange Rate function to see the price in chosen currency  
 
 > Registered users are able to:
 * Log in and log out
-*
-
-
+* Message other users
+* Have a profile page which displays all of their uploaded artworks
+* Follow other users
+* Put artworks in their basket
+* See an overview of their basket items
 
 ## Technologies Used
 - HTML 5
@@ -138,6 +142,8 @@ All Features
 - I am proud of all the functionality that I have produced, as well as the styling.
 
 ## Future Features
+* Make create and delete features only available to logged in users  
+* Users can see a list of followers and users they are following  
 
 ***
 
