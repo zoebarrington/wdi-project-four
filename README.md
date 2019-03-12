@@ -1,4 +1,4 @@
-# **Project 4: Art Xchange**
+# **Project 4: Art Xchange** <img src="screenshots/artxchangesmall.png" style="width: 60px;"/>
 
 ## Background
 Art Xchange is an E-commerce platform that connects buyers and sellers of affordable art.
