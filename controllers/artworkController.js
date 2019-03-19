@@ -27,7 +27,6 @@ function createRoute(req, res, next) {
 function updateRoute(req, res, next) {
   Artwork.findById(req.params.id)
     .exec()
-    // .then(artwork => artwork.set(req.body))
 
     .then(artwork => {
       Object.assign(artwork, req.body);
