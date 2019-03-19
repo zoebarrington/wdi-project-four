@@ -114,8 +114,6 @@ All Features
 ![Create](screenshots/create.png)
 
 ## Featured Piece of Code no.1
-
-## Featured Piece of Code no.2
 ```javascript
 <div className="basket-section">
   <div>
@@ -132,8 +130,12 @@ All Features
 </div>
 </div>
 ```
+This piece of code is taken from my TextColumn.js component and was the greatest challenging that I overcame.
+I was struggling to see how to create the drop down before I discovered the Object.keys() method, which returns
+an array of a given object's property names, in the same order as we get in a normal loop. Once I found this method
+I was able to create the drop down and add the Exchange Rate API to my project. This was my greatest accomplishment,
+as I was able to do this on my own and spent a lot of time thinking about the logic.
 
-## Challenges Faced
 
 ## Wins
 
