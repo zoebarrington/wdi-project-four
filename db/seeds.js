@@ -285,15 +285,6 @@ Artwork.collection.drop();
 User.collection.drop();
 Message.collection.drop();
 
-// Artwork.create(artworkData)
-//   .then(artwork => {
-//     console.log(`Created ${artwork.length} artworks!`);
-//     User.create(userData)
-//       .then(users => {
-//         console.log(`Created ${users.length} users!`);
-//         mongoose.connection.close();
-//       });
-//   });
 
 Artwork.create(artworkData)
   .then(artwork => {
