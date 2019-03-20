@@ -34,8 +34,6 @@ class Profile extends React.Component {
       const index = this.state.user.followedBy.indexOf(this.state.user);
       this.state.user.followedBy.splice(index, 1);
       this.setState({ buttonName: 'Follow' });
-      // const totalFollowers = this.state.user.followedBy.length;
-      // console.log('total', totalFollowers);
     } else {
       this.state.user.followedBy.push(`${decodeToken().sub}`);
       this.setState({ buttonName: 'Unfollow' });
