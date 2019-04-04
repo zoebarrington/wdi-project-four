@@ -11,14 +11,6 @@ const userIds = [
   '5c0a5555c333a575f6c5d0aa'
 ];
 
-// const userData = [{
-//   _id: userIds [0],
-//   username: 'camilladown',
-//   email: 'camilla@down',
-//   password: 'pass',
-//   bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
-//   profilePicture: 'image'
-// }];
 
 const artworkData = [
   {
