@@ -17,7 +17,7 @@ class Header extends React.Component {
 
       <section id="header">
         <nav className="navbar-end">
-          <Link id="logo" className="navbar-start" to="/"><img src="http://artxchange.org/wp-content/uploads/2017/04/ArtX_Logo_Gallery_RED-1-e1493498798972.png"/></Link>
+          <Link id="logo" className="navbar-start" to="/"><img src="./screenshots/xchange-log.jpg"/></Link>
 
           <div className="navbar-item">
             <Link id="nav-item" className="navbar-item" to="/">HOME</Link>
